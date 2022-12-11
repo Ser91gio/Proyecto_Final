@@ -1,5 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
-class Usuario(models.Model):
-    nombre=models.CharField(max_length=255)
-    mail=models.CharField(max_length=255)
+class Usuario(AbstractUser):
+    es_administrador=models.BooleanField(default=True)
