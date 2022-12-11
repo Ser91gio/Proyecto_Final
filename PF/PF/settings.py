@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'usuario'
 ]
 
 MIDDLEWARE = [
@@ -75,9 +76,15 @@ WSGI_APPLICATION = 'PF.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'ENGINE': 'mssql',
+        'NAME': 'Proyecto_Final',
+        'USER': 'sa',
+        'PASSWORD': 'sa',
+        'HOST': 'USER\TEW_SQLEXPRESS',
+        'OPTIONS': {
+            'driver': 'ODBC Driver 17 for SQL Server'
+        },
+    },
 }
 
 
